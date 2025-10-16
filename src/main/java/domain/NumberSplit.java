@@ -2,13 +2,16 @@ package domain;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class NumberSplit {
 
-    public static List<Integer> splitAndParse(String input, String reg){
-        return Arrays.stream(input.split(reg))
+    public static List<String> splitString(String input, String reg) {
+        return Arrays.asList(input.split(reg));
+    }
+
+    public static List<Integer> integerParse(List<String> list) {
+        return list.stream()
                 .map(Integer::parseInt)
-                .collect(Collectors.toList());
+                .toList();
     }
 }

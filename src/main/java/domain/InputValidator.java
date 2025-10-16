@@ -3,7 +3,7 @@ package domain;
 import java.util.List;
 
 public class InputValidator {
-    public void validateFormat(String input) {
+    public static void validateFormat(String input) {
         if (input == null) {
             throw new IllegalArgumentException("입력값이 null입니다.");
         }
@@ -18,7 +18,7 @@ public class InputValidator {
         }
     }
 
-    public void validateDelimiter(String delimiter) {
+    public static void validateDelimiter(String delimiter) {
         if (delimiter.chars().anyMatch(Character::isISOControl)) {
             throw new IllegalArgumentException("제어 문자는 구분자로 사용할 수 없습니다: " + delimiter);
         }
@@ -31,7 +31,7 @@ public class InputValidator {
             throw new IllegalArgumentException("숫자, 음수는 커스텀 구분자로 사용할 수 없습니다: " + delimiter);
         }
     }
-    public void validateContent(List<String> tokens) {
+    public static void validateContent(List<String> tokens) {
         for (String token : tokens) {
             if (!token.matches("-?\\d+")) {
                 throw new IllegalArgumentException("숫자가 아닌 값이 포함되어 있습니다: " + token);

@@ -18,10 +18,10 @@ class NumberSplitTest {
         String basic = "1,3,5:7";
         String custom = "1/3/5/7";
 
-        List<Integer> numList = Arrays.asList(1,3,5,7);
-
-        assertEquals(numList, numberSplit.splitAndParse(basic, "[,:]"));
-        assertEquals(numList, numberSplit.splitAndParse(custom, "/"));
+        List<String> list = Arrays.asList("1","3","5","7");
+        assertEquals(list, numberSplit.splitString(basic, "[,:]"));
+        assertEquals(list, numberSplit.splitString(custom, "/"));
+        assertEquals(Arrays.asList(1,3,5,7), numberSplit.integerParse(list));
     }
 
 }
