@@ -40,14 +40,20 @@
 
 ## 3. 클래스 계층 구조
 ~~~
-src/main/java/
-├── domain/
+src/main/
+├── java/domain/
 │   ├── InputValidator.java      # 입력값 검증
 │   ├── DelimiterParser.java     # 구분자 파싱
 │   ├── NumberSplit.java        # 문자열 → 숫자 변환
-│   └── Calculator.java          # 합산 계산
+│   └── SumCalculator.java          # 합산 계산
 ├── calculator/
-│   └── StringCalculator.java    # 전체 흐름 제어 및 조립
-└── test/
-└── StringCalculatorTest.java
+│   └── Application.java    # 전체 흐름 제어 및 조립
+└── test/java/
+    └── calculator/
+        └── ApplicationTest.java
+    └── domain/
+        └── DelimiterParserTest.java
+        └── InputValidatorTest.java
+        └── NumberSplitTest.java
+        └── SumCalculatorTest.java
 ~~~
