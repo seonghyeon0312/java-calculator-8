@@ -10,10 +10,10 @@ public class InputValidator {
         if (input.isBlank() && !input.isEmpty())  {
             throw new IllegalArgumentException("입력값에 공백만 포함되어 있습니다.");
         }
-        if (input.startsWith("//") && !input.contains("\n")) {
+        if (input.startsWith("//") && !input.contains("\\n")) {
             throw new IllegalArgumentException("잘못된 커스텀 구분자 형식입니다.");
         }
-        if (!input.startsWith("//") && input.contains("\n")) {
+        if (!input.startsWith("//") && input.contains("\\n")) {
             throw new IllegalArgumentException("커스텀 구분자 선언 없이 줄바꿈 문자가 포함되어 있습니다.");
         }
     }
