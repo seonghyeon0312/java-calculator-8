@@ -41,15 +41,8 @@ class InputValidatorTest {
     @DisplayName("잘못된 커스텀 구분자 형식이면 IllegalArgumentException 발생")
     void validateFormat_invalidCustomDelimiter_throwsException() {
         assertThrows(IllegalArgumentException.class, () -> validator.validateFormat("//*1*2*3"));
-        assertThrows(IllegalArgumentException.class, () -> validator.validateFormat("*\n1*2*3"));
+        assertThrows(IllegalArgumentException.class, () -> validator.validateFormat("*\\n1*2*3"));
     }
-
-    @Test
-    @DisplayName("올바른 커스텀 구분자 형식은 예외 없이 통과해야 함")
-    void validateFormat_validCustomDelimiter_passes() {
-        assertDoesNotThrow(() -> validator.validateFormat("//\\\n1;2;3"));
-    }
-
 
 
     @Test

@@ -18,6 +18,7 @@ class DelimiterParserTest {
     @DisplayName("커스텀 구분자 추출 확인")
     public void customDelimiter(){
         String input = "//isdf\\n1i2d3f4";
+
         List<String> result = Arrays.asList("isdf", "1i2d3f4");
         assertEquals(result, delimiterParser.parser(input));
     }
