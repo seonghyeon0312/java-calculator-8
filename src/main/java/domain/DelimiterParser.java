@@ -1,14 +1,22 @@
 package domain;
 
-public class DelimiterParser {
-    static String basicDelimiter = "[,:]";
+import java.util.List;
+import java.util.ArrayList;
 
-    public static String parser(String input) {
+public class DelimiterParser {
+
+    public static List<String> parser(String input) {
+        List<String> result = new ArrayList<>();
         if(input.startsWith("//") && input.contains("\\n")) {
-            int end = input.indexOf("\n");
+            int end = input.indexOf("\\n");
             int start = 2;
-            return input.substring(start, end);
+            String reg = input.substring(start, end-1);
+            result.add(reg);
+            result.add(input.substring(end+2));
+            return result;
         }
-        return basicDelimiter;
+        result.add(",:");
+        result.add(input);
+        return result;
     }
 }

@@ -23,5 +23,4 @@ class NumberSplitTest {
         assertEquals(list, numberSplit.splitString(custom, "/"));
         assertEquals(Arrays.asList(1,3,5,7), numberSplit.integerParse(list));
     }
-
 }
